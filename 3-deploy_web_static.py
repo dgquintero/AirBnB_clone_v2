@@ -26,6 +26,7 @@ def do_pack():
         return None
     return tarWeb_static
 
+
 def do_deploy(archive_path):
     """distributes an archive to the web servers"""
     if exists(archive_path) is False:
@@ -45,6 +46,7 @@ def do_deploy(archive_path):
         return True
     except:
         return False
+
 
 def deploy():
     '''that creates and distributes an archive to your web servers,
