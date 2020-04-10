@@ -8,7 +8,6 @@ from datetime import datetime
 from fabric.api import put, run, env, local
 from os.path import exists, isdir
 env.hosts = ['34.74.116.197', '3.85.112.73']
-logging.raiseExceptions=False
 
 
 def do_pack():
