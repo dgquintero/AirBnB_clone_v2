@@ -20,7 +20,7 @@ def do_pack():
                                                                   now.hour,
                                                                   now.minute,
                                                                   now.second)
-    if not path.isdir("versions"):
+    if not isdir("versions"):
         if local("mkdir -p versions").failed:
             return None
     if local('tar -cvzf {} web_static'.format(tarWeb_static)).failed:
