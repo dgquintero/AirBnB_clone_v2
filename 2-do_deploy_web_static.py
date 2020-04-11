@@ -8,7 +8,6 @@ from fabric.api import put, run, env
 from os.path import exists
 import logging
 env.hosts = ['34.74.116.197', '3.85.112.73']
-logging.raiseExceptions=False
 
 
 def do_deploy(archive_path):
