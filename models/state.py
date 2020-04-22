@@ -8,6 +8,7 @@ import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
 
 class State(BaseModel, Base):
@@ -16,10 +17,12 @@ class State(BaseModel, Base):
         name: input name
     """
     __tablename__ = 'states'
-    name = ""
     name = Column(String(128), nullable=False)
+    if getenv('HBNB_TYPE_STORAGE') == 'db':
+        cities = relationship('City', backref='state')
+    
 
-    if models.storage_t != 'db':
+    if getenv("HBNB_ENV") != 'db':
         @property
         def cities(self):
             list_city = []

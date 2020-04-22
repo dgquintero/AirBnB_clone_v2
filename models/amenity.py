@@ -13,8 +13,6 @@ class Amenity(BaseModel, Base):
     Attributes:
         name: input name
     """
-    if models.storage_t == 'db':
-        __tablename__ = 'amenities'
-        name = Column(String(128), nullable=False)
-    else:
-        name = ""
+
+    __tablename__ = 'amenities'
+    name = Column(String(128), nullable=False)
