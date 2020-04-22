@@ -82,4 +82,4 @@ class DBStorage:
         """
         public method that calls remove method
         """
-        self.__session.remove()
+        self.__session.close()

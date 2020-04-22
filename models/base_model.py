@@ -4,6 +4,7 @@ import uuid
 import models
 from datetime import datetime
 import sqlalchemy
+import os
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy import ForeignKey
@@ -31,11 +32,13 @@ class BaseModel:
             updated_at: updated date
         """
         if kwargs:
+            print("#########################")
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 if key != "__class__":
                     setattr(self, key, value)
+            print("#########################")
             if self.id is None:
                 setattr(self, 'id', str(uuid.uuid4()))
             if self.created_at is None or self.updated_at is None:
