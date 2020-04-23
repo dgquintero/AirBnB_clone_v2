@@ -57,6 +57,8 @@ button:hover {
     border-radius: 4px;
     background: #FAFAFA;
     padding-bottom: 25px;
+    max-height: 300;
+    overflow: auto;
 }
 .amenities .popover {
     padding: 20px 0;
@@ -68,6 +70,8 @@ button:hover {
 }
 .popover ul {
     list-style-type: none;
+    max-height: 300;
+    overflow: auto;
 }
 .amenities:hover .popover,
 .locations:hover .popover {
