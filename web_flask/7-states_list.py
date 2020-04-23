@@ -15,7 +15,7 @@ def display_states_list():
 
 
 @app.teardown_appcontext
-def teardown_storage():
+def teardown_storage(exception):
     storage.close()
 
 
