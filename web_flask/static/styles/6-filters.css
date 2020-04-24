@@ -57,8 +57,6 @@ button:hover {
     border-radius: 4px;
     background: #FAFAFA;
     padding-bottom: 25px;
-    max-height: 300;
-    overflow: auto;
 }
 .amenities .popover {
     padding: 20px 0;
